@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:linkedlnmobile_app/Navigation/navigation.dart';
 import 'package:linkedlnmobile_app/joinNowScreen.dart';
 
 import 'constants.dart';
 
-class AddEmailOrPhone extends StatefulWidget {
+class AddEmailOrPhoneScreen extends StatefulWidget {
   @override
-  _AddEmailOrPhoneState createState() => _AddEmailOrPhoneState();
+  _AddEmailOrPhoneScreenState createState() => _AddEmailOrPhoneScreenState();
 }
 
-class _AddEmailOrPhoneState extends State<AddEmailOrPhone> {
+class _AddEmailOrPhoneScreenState extends State<AddEmailOrPhoneScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,7 +59,28 @@ class _AddEmailOrPhoneState extends State<AddEmailOrPhone> {
             SizedBox(height: 20,),
             Center(
               child: Container(
-                  child:Buttons('Continue',),),
+                width: 320,
+                height: 50,
+                margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    )),
+                  ),
+                  // color: Color(0xffa60000),
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  onPressed: () {
+                    AppNavigator.navigateToSetPasswordScreen(context);
+                  },
+                ),
+              ),
             ),
           ],
         ),

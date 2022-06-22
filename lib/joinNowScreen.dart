@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Navigation/navigation.dart';
 import 'constants.dart';
 
 class JoinNowScreen extends StatefulWidget {
@@ -67,7 +68,7 @@ class _JoinNowScreenState extends State<JoinNowScreen> {
                     ),
                   ),
                   onPressed: () {
-
+                    AppNavigator.navigateToAddNameScreen(context);
                   },
                 ),
               ),
